@@ -1,26 +1,36 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Button, Icon, Modal } from 'semantic-ui-react';
+import 'semantic-ui-css/semantic.min.css';
+import Form from './components/Auth/Form';
+import './styles/app.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
+      <Modal
+        trigger={<Button>Show Modal</Button>}
+        centered={false}
+        basic
+        size="tiny"
+        closeIcon
+      >
+        <Modal.Header style={{ paddingBottom: 10 }}>
+          <a className="text">
+            login
           </a>
-        </header>
-      </div>
+        </Modal.Header>
+        <Modal.Content style={{ backgroundColor: 'white' }}>
+          <Form />
+        </Modal.Content>
+        <Modal.Actions>
+          <Button color='red'>
+            <Icon name='remove' /> No
+          </Button>
+          <Button color='green'>
+            <Icon name='checkmark' /> Yes
+          </Button>
+        </Modal.Actions>
+      </Modal>
     );
   }
 }
