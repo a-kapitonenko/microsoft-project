@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Button, Icon, Modal } from 'semantic-ui-react';
+import { Button, Modal } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
-import Form from './components/Auth/Form';
+import Form from './components/Auth';
 import './styles/app.css';
 
 class App extends Component {
@@ -22,14 +22,6 @@ class App extends Component {
         <Modal.Content style={{ backgroundColor: 'white' }}>
           <Form />
         </Modal.Content>
-        <Modal.Actions>
-          <Button color='red'>
-            <Icon name='remove' /> No
-          </Button>
-          <Button color='green'>
-            <Icon name='checkmark' /> Yes
-          </Button>
-        </Modal.Actions>
       </Modal>
     );
   }
