@@ -9,6 +9,11 @@ class Firebase {
     firebase.initializeApp(config);
 
     this.auth = firebase.auth();
+    this.auth.onAuthStateChanged(authUser => {
+      authUser
+        ? console.log('yes')
+        : console.log('none');
+    });
   }
 
   doCreateUserWithEmailAndPassword = (email: string, password: string) => {
